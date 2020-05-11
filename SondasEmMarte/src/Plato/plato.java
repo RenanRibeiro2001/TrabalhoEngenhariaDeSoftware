@@ -13,10 +13,14 @@ public class plato {
 		int repitir = 1;
 		
 		while(repitir == 1) {
-			System.out.println("Digite a largura do platô: ");
-			tamanhoX = scan.nextInt();
-			System.out.println("Digite a altura do platô: ");
-			tamanhoY = scan.nextInt();
+			System.out.println("Digite a largura e altura do platô: ");
+			String coordenadas = scan.nextLine();
+		
+			String Tamanhox = coordenadas.split(" ")[0];
+			String Tamanhoy = coordenadas.split(" ")[1];
+			
+			tamanhoX = Integer.parseInt(Tamanhox);
+			tamanhoY = Integer.parseInt(Tamanhoy);
 			
 			if(tamanhoX < 0) {
 				System.out.println("Você digitou uma largura negativa, tente novamente");
@@ -24,11 +28,14 @@ public class plato {
 				System.out.println("Você digitou uma altura negativa, tente novamente");
 			}else {
 				repitir++;
-				System.out.println("O tamanho do platô é: " + tamanhoX + " X " + tamanhoY);
+			 	System.out.println("O tamanho do platô é: " + tamanhoX + " X " + tamanhoY);
 			}
 		}
 	}
-
+	
+	public void coordenadasPlato() {
+		int [][] coordenadas = new int[tamanhoX][tamanhoY];
+	}
 
 	public int getTamanhoX() {
 		return tamanhoX;
