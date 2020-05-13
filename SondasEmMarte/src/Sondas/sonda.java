@@ -27,19 +27,63 @@ public class sonda {
 			String PosicaoY = posicao_inicial.split(" ")[1];
 			posicao_bussola = posicao_inicial.split(" ")[2];
 			
-			posicaoX = Integer.parseInt(PosicaoX);
-			posicaoY = Integer.parseInt(PosicaoY);
+			ehInteiro(PosicaoX);
+			ehInteiro(PosicaoY);
+			ehLetra(posicao_bussola);
 			
-			if(posicaoX > teste.getTemp1().getTamanhoX() || posicaoY > teste.getTemp1().getTamanhoY()) {
-				System.out.println("A sonda não pode ser colocada fora do plato");
-			}else if(posicaoX < 0 || posicaoY < 0) {
-				System.out.println("A sonda não pode ter uma posição negativa");
+			if(ehInteiro(PosicaoX) == true && ehInteiro(PosicaoY) == true) {
+				if(ehLetra(posicao_bussola) == true) {
+					posicaoX = Integer.parseInt(PosicaoX);
+					posicaoY = Integer.parseInt(PosicaoY);
+					
+					if(posicaoX > teste.getTemp1().getTamanhoX() || posicaoY > teste.getTemp1().getTamanhoY()) {
+						System.out.println("A sonda não pode ser colocada fora do plato");
+					}else if(posicaoX < 0 || posicaoY < 0) {
+						System.out.println("A sonda não pode ter uma posição negativa");
+					}else {
+						repitir++;
+						System.out.println("a posicao inicial da sonda é: " + posicaoX + " X " + posicaoY + " " + posicao_bussola);
+					}
+				}else {
+					System.out.println("Você digitou uma posição errada, tente novamente");
+				}
 			}else {
-				repitir++;
-				System.out.println("a posicao inicial da sonda é: " + posicaoX + " X " + posicaoY + " " + posicao_bussola);
+				System.out.println("Você digitou uma coordenada errada, tente novamente");
 			}
 	    }	
 	}	
+	
+	public boolean ehInteiro( String s ) {
+
+        // cria um array de char
+        char[] c = s.toCharArray();
+        boolean d = true;
+
+        for ( int i = 0; i < c.length; i++ ) {
+            // verifica se o char não é um dígito
+            if ( !Character.isDigit( c[ i ] ) ) {
+                d = false;
+                break;
+            }
+        } 
+          return d;
+     }
+	
+	public boolean ehLetra( String s ) {
+
+        // cria um array de char
+        char[] c = s.toCharArray();
+        boolean d = true;
+
+        for ( int i = 0; i < c.length; i++ ) {
+            // verifica se o char não é um dígito
+            if ( Character.isDigit( c[ i ] ) ) {
+                d = false;
+                break;
+            }
+        } 
+          return d;
+     }
 	
 	public int getPosicaoX() {
 		return posicaoX;
