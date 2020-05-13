@@ -19,20 +19,43 @@ public class plato {
 			String Tamanhox = coordenadas.split(" ")[0];
 			String Tamanhoy = coordenadas.split(" ")[1];
 			
-			tamanhoX = Integer.parseInt(Tamanhox);
-			tamanhoY = Integer.parseInt(Tamanhoy);
+			ehInteiro(Tamanhox);
+			ehInteiro(Tamanhoy);
 			
-			if(tamanhoX < 0) {
-				System.out.println("Você digitou uma largura negativa, tente novamente");
-			}else if(tamanhoY < 0) {
-				System.out.println("Você digitou uma altura negativa, tente novamente");
+			if(ehInteiro(Tamanhox) == true && ehInteiro(Tamanhoy) == true) {
+				tamanhoX = Integer.parseInt(Tamanhox);
+				tamanhoY = Integer.parseInt(Tamanhoy);
+				
+				if(tamanhoX < 0) {
+					System.out.println("Você digitou uma largura negativa, tente novamente");
+				}else if(tamanhoY < 0) {
+					System.out.println("Você digitou uma altura negativa, tente novamente");
+				}else {
+					repitir++;
+				 	System.out.println("O tamanho do platô é: " + tamanhoX + " X " + tamanhoY);
+				}
 			}else {
-				repitir++;
-			 	System.out.println("O tamanho do platô é: " + tamanhoX + " X " + tamanhoY);
+				System.out.println("Você digitou uma letra, tente novamente");
 			}
 		}
 	}
 	
+	public boolean ehInteiro( String s ) {
+
+        // cria um array de char
+        char[] c = s.toCharArray();
+        boolean d = true;
+
+        for ( int i = 0; i < c.length; i++ ) {
+            // verifica se o char não é um dígito
+            if ( !Character.isDigit( c[ i ] ) ) {
+                d = false;
+                break;
+            }
+        } 
+          return d;
+     }
+        
 	public void coordenadasPlato() {
 		int [][] coordenadas = new int[tamanhoX][tamanhoY];
 	}
