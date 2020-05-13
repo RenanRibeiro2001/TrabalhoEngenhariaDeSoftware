@@ -27,9 +27,9 @@ public class plato {
 				tamanhoY = Integer.parseInt(Tamanhoy);
 				
 				if(tamanhoX < 0) {
-					System.out.println("Você digitou uma largura negativa, tente novamente");
+					System.out.println("Você digitou uma largura negativa, tente novamente!");
 				}else if(tamanhoY < 0) {
-					System.out.println("Você digitou uma altura negativa, tente novamente");
+					System.out.println("Você digitou uma altura negativa, tente novamente!");
 				}else {
 					repitir++;
 				 	System.out.println("O tamanho do platô é: " + tamanhoX + " X " + tamanhoY);
