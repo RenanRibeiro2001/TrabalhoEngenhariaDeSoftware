@@ -1,12 +1,12 @@
-package Sondas;
+package sondas;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import Plato.plato;
-import TesteSondas.teste;
+import plato.Plato;
+import testeSondas.Teste;
 
-public class sonda {
+public class Sonda {
 
 	private int posicaoX;
 	private int posicaoY;
@@ -36,7 +36,7 @@ public class sonda {
 					posicaoX = Integer.parseInt(PosicaoX);
 					posicaoY = Integer.parseInt(PosicaoY);
 					
-					if(posicaoX > teste.getTemp1().getTamanhoX() || posicaoY > teste.getTemp1().getTamanhoY()) {
+					if(posicaoX > Teste.getTemp1().getTamanhoX() || posicaoY > Teste.getTemp1().getTamanhoY()) {
 						System.out.println("A sonda não pode ser colocada fora do plato");
 					}else if(posicaoX < 0 || posicaoY < 0) {
 						System.out.println("A sonda não pode ter uma posição negativa");

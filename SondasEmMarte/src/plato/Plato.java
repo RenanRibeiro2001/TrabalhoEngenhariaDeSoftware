@@ -1,8 +1,8 @@
-package Plato;
+package plato;
 
 import java.util.Scanner;
 
-public class plato {
+public class Plato {
 	
 	private int tamanhoX;
 	private int tamanhoY;
