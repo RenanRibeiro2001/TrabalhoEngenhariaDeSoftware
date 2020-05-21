@@ -18,23 +18,23 @@ public class Verificacoes {
           return d;
      }
 	
-	public void verifica_plato(int x, int y) {
-		if(x <= 0 || y <= 0) {
+	public void verifica_plato(int platoX, int platoY) {
+		if(platoX <= 0 || platoY <= 0) {
 			System.out.println("o plato não pode ter posicao zerada ou negativa");
 		}else {
-			System.out.println(x + " " + y);
+			System.out.println(platoX + " " + platoY);
 		}
 	}
 	
-	public void verifica_sonda(int sondax, int sonday,String bussola ,int platox, int platoy) {
-		if(sondax > platox || sonday > platoy) {
+	public void verifica_sonda(int sondaX, int sondaY,String bussola ,int platoX, int platoY) {
+		if(sondaX > platoX || sondaY > platoY) {
 			System.out.println("a sonda nao pode ser colocada fora do plato");
-		}else if(sondax <= 0 || sonday <= 0) {
+		}else if(sondaX <= 0 || sondaY <= 0) {
 			System.out.println("a sonda não pode ter posicao zerada ou negativa");
 		}else if(ehLetra(bussola) == false || bussola != "N" && bussola != "L" && bussola != "S" && bussola != "O") {
 			System.out.println("a posicao da bussola esta errada");
 		}else {
-			System.out.println(sondax + " " + sonday + " " + bussola);
+			System.out.println(sondaX + " " + sondaY + " " + bussola);
 		}
 	}
 }
