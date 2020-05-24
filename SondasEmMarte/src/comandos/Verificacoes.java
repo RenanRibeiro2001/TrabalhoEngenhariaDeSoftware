@@ -37,4 +37,19 @@ public class Verificacoes {
 			System.out.println(sondaX + " " + sondaY + " " + bussola);
 		}
 	}
+	
+	public void movimentacao_sondas(String comandos_sondas,int sondaX, int sondaY,String bussola ,int platoX, int platoY) {
+		for(int i = 0; i < comandos_sondas.length(); i++) {
+			char pegaComando;
+			String comandoPego;
+			// L R M
+			pegaComando = comandos_sondas.charAt(i);
+			comandoPego = String.valueOf(pegaComando);
+			//System.out.println(comandoPego);
+			if(!comandoPego.equals("L") && !comandoPego.equals("R") && !comandoPego.equals("M")) {
+				System.out.println("comando invalido");
+				break;
+			}
+		}
+	}
 }

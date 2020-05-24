@@ -5,6 +5,7 @@ public class Sonda {
 	private int posicaoX;
 	private int posicaoY;
 	private String posicao_bussola;
+	private String comando_sonda;
 	
 	public Sonda(int posicaoX, int posicaoY, String posicao_bussola) {
 		this.posicaoX = posicaoX;
@@ -35,6 +36,4 @@ public class Sonda {
 	public void setPosicao_bussola(String posicao_bussola) {
 		this.posicao_bussola = posicao_bussola;
 	}
-	
-	
 }
