@@ -1,26 +1,37 @@
 package testeSondas;
 
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import comandos.Verificacoes;
 import plato.Plato;
 import sondas.Sonda;
 
 public class Teste{
-	private static Plato temp1 = new Plato();
 	public static void main(String[] args) {
 		
-		Sonda temp2 = new Sonda();
-		Sonda temp3 = new Sonda();
+		Scanner scan = new Scanner(System.in);
+		Verificacoes verificacao = new Verificacoes();
+		Plato plato = new Plato(10, 10);
+		Sonda sonda1 = new Sonda(3, 5 ,"L");
+		Sonda sonda2 = new Sonda(6, 7 ,"N");
 		
-		temp1.montarPlato();
-		temp2.posicionar_sonda();
-		//aqui receber o comando
-		temp3.posicionar_sonda();
-		//aqui receber o comando
-	}
+		String comandos;
 	
-	public static Plato getTemp1() {
-		return temp1;
-	}
-	public static void setTemp1(Plato temp1) {
-		Teste.temp1 = temp1;
+		// TESTE PLATO
+		verificacao.verifica_plato(plato.getTamanhoX(), plato.getTamanhoY());
+		
+		// TESTE SONDA
+		verificacao.verifica_sonda(sonda1.getPosicaoX(), sonda1.getPosicaoY(), sonda1.getPosicao_bussola(),
+				                   plato.getTamanhoX(), plato.getTamanhoY());
+		
+		comandos = scan.nextLine();
+		verificacao.movimentacao_sondas(comandos,sonda1.getPosicaoX(), sonda1.getPosicaoY(), sonda1.getPosicao_bussola(),
+                                        plato.getTamanhoX(), plato.getTamanhoY());
+		
+		verificacao.verifica_sonda(sonda2.getPosicaoX(), sonda2.getPosicaoY(), sonda2.getPosicao_bussola(), 
+				                   plato.getTamanhoX(), plato.getTamanhoY());
+		// Aqui coloca o movimento
 	}
 }
