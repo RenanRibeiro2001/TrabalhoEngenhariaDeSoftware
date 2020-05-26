@@ -16,7 +16,7 @@ public class Teste{
 		Verificacoes verificacao = new Verificacoes();
 		Plato plato = new Plato(10, 10);
 		Sonda sonda1 = new Sonda(3, 5 ,"E");
-		Sonda sonda2 = new Sonda(6, 7 ,"N");
+		Sonda sonda2 = new Sonda(6, 7 ,"O");
 		
 		String comandos1;
 		String comandos2;
