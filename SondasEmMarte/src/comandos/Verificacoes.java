@@ -31,7 +31,7 @@ public class Verificacoes {
 			System.out.println("a sonda nao pode ser colocada fora do plato");
 		}else if(sondaX <= 0 || sondaY <= 0) {
 			System.out.println("a sonda não pode ter posicao zerada ou negativa");
-		}else if(ehLetra(bussola) == false || bussola != "N" && bussola != "E" && bussola != "S" && bussola != "O") {
+		}else if(ehLetra(bussola) == false || !bussola.equals("N") && !bussola.equals("E") && !bussola.equals("S") && !bussola.equals("O")) {
 			System.out.println("a posicao da bussola esta errada");
 		}else {
 			System.out.println(sondaX + " " + sondaY + " " + bussola);
@@ -42,10 +42,10 @@ public class Verificacoes {
 		for(int i = 0; i < comandos_sondas.length(); i++) {
 			char pegaComando;
 			String comandoPego;
-			// L R M
+			
 			pegaComando = comandos_sondas.charAt(i);
 			comandoPego = String.valueOf(pegaComando);
-			//System.out.println(comandoPego);
+			
 			if(!comandoPego.equals("L") && !comandoPego.equals("R") && !comandoPego.equals("M")) {
 				System.out.println("comando invalido");
 				break;

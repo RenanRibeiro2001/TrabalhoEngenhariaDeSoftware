@@ -1,7 +1,5 @@
 package testeSondas;
 
-
-import java.util.ArrayList;
 import java.util.Scanner;
 
 import comandos.Verificacoes;
