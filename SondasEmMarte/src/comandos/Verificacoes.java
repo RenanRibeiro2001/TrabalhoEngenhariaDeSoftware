@@ -31,7 +31,7 @@ public class Verificacoes {
 			System.out.println("a sonda nao pode ser colocada fora do plato");
 		}else if(sondaX <= 0 || sondaY <= 0) {
 			System.out.println("a sonda não pode ter posicao zerada ou negativa");
-		}else if(ehLetra(bussola) == false || bussola != "N" && bussola != "L" && bussola != "S" && bussola != "O") {
+		}else if(ehLetra(bussola) == false || bussola != "N" && bussola != "E" && bussola != "S" && bussola != "O") {
 			System.out.println("a posicao da bussola esta errada");
 		}else {
 			System.out.println(sondaX + " " + sondaY + " " + bussola);
@@ -49,7 +49,68 @@ public class Verificacoes {
 			if(!comandoPego.equals("L") && !comandoPego.equals("R") && !comandoPego.equals("M")) {
 				System.out.println("comando invalido");
 				break;
+			}else if(comandoPego.equals("L")) {
+				if(bussola.equals("N")) {
+					bussola = "O";
+				}
+				else if(bussola.equals("O")) {
+					bussola = "S";
+				}
+				else if(bussola.equals("S")) {
+					bussola = "E";
+				}
+				else if(bussola.equals("E")) {
+					bussola = "N";
+				}
+				//System.out.println(bussola);
+				
+			}else if(comandoPego.equals("R")) {
+				if(bussola.equals("N")) {
+					bussola = "E";
+				}
+				else if(bussola.equals("E")) {
+					bussola = "S";
+				}
+				else if(bussola.equals("S")) {
+					bussola = "O";
+				}
+				else if(bussola.equals("O")) {
+					bussola = "N";
+				}
+				//System.out.println(bussola);
+			}
+			else if(comandoPego.equals("M")) {
+				if(bussola.equals("N")) {
+					if(sondaY >= platoY) {
+						System.out.println("A sonda chegou na borda do platô");
+						break;
+					}
+					sondaY++;
+				}
+				else if(bussola.equals("E")) {
+					if(sondaX >= platoX) {
+						System.out.println("A sonda chegou na borda do platô");
+						break;
+					}
+					sondaX++;
+				}
+				else if(bussola.equals("S")) {
+					if(sondaY == 1) {
+						System.out.println("A sonda chegou na borda do platô");
+						break;
+					}
+					sondaY--;
+				}
+				else if(bussola.equals("O")) {
+					if(sondaX == 1) {
+						System.out.println("A sonda chegou na borda do platô");
+						break;
+					}
+					sondaX--;
+				}
+				//System.out.println(bussola);
 			}
 		}
+		System.out.println(sondaX + " " + sondaY + " " + bussola);
 	}
 }
