@@ -37,9 +37,9 @@ public class Teste{
 		System.out.println("Dados de saida:");
 		
 		verificacao.movimentacao_sondas(comandos1,sonda1.getPosicaoX(), sonda1.getPosicaoY(), sonda1.getPosicao_bussola(),
-		        plato.getTamanhoX(), plato.getTamanhoY());
+		                                plato.getTamanhoX(), plato.getTamanhoY());
 		
 		verificacao.movimentacao_sondas(comandos2,sonda2.getPosicaoX(), sonda2.getPosicaoY(), sonda2.getPosicao_bussola(),
-        plato.getTamanhoX(), plato.getTamanhoY());
+                                        plato.getTamanhoX(), plato.getTamanhoY());
 	}
 }
