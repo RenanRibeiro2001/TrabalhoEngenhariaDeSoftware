@@ -82,31 +82,31 @@ public class Verificacoes {
 			else if(comandoPego.equals("M")) {
 				if(bussola.equals("N")) {
 					if(sondaY >= platoY) {
-						System.out.println("A sonda chegou na borda do platô");
-						break;
+						System.out.println("A sonda chegou na borda do platô");			
+					}else {
+						sondaY++;
 					}
-					sondaY++;
 				}
 				else if(bussola.equals("E")) {
 					if(sondaX >= platoX) {
 						System.out.println("A sonda chegou na borda do platô");
-						break;
+					}else {
+						sondaX++;
 					}
-					sondaX++;
 				}
 				else if(bussola.equals("S")) {
 					if(sondaY == 1) {
 						System.out.println("A sonda chegou na borda do platô");
-						break;
+					}else {
+						sondaY--;
 					}
-					sondaY--;
 				}
 				else if(bussola.equals("O")) {
 					if(sondaX == 1) {
 						System.out.println("A sonda chegou na borda do platô");
-						break;
+					}else {
+						sondaX--;
 					}
-					sondaX--;
 				}
 				//System.out.println(bussola);
 			}
