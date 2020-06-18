@@ -1,4 +1,4 @@
-package plato;
+package model;
 
 public class Plato {
 	
